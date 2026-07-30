@@ -63,6 +63,28 @@ body {
   color: var(--muted);
 }
 
+.hero-actions {
+  margin-top: 24px;
+}
+
+.store-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.store-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 92, 0, 0.25);
+}
+
 .products-section {
   margin-top: 12px;
 }
