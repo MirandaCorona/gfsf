@@ -170,6 +170,120 @@ body {
   letter-spacing: -0.02em;
 }
 
+.idea-carousel {
+  min-width: 0;
+}
+
+.carousel-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.idea-slides {
+  display: grid;
+}
+
+.idea-slide {
+  grid-area: 1 / 1;
+  animation: slide-in 0.25s ease;
+}
+
+.idea-slide-two {
+  display: none;
+}
+
+#new-idea-two:checked ~ .idea-slides .idea-slide-one {
+  display: none;
+}
+
+#new-idea-two:checked ~ .idea-slides .idea-slide-two {
+  display: block;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.arrow-two {
+  display: none;
+}
+
+#new-idea-two:checked ~ .carousel-controls .arrow-one {
+  display: none;
+}
+
+#new-idea-two:checked ~ .carousel-controls .arrow-two {
+  display: inline-flex;
+}
+
+.carousel-arrow,
+.carousel-dot {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--panel-strong);
+  cursor: pointer;
+}
+
+.carousel-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.35rem;
+}
+
+.carousel-arrow:hover,
+.carousel-arrow:focus-visible,
+.carousel-dot:hover,
+.carousel-dot:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.carousel-dot.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+#new-idea-one:checked ~ .carousel-controls .carousel-dot:first-child,
+#new-idea-two:checked ~ .carousel-controls .carousel-dot:last-child {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes slide-in {
+  from { opacity: 0.35; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
 .note {
   margin: 18px 0 0;
   color: var(--muted);
